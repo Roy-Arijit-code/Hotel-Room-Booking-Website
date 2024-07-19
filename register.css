@@ -1,0 +1,122 @@
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background: linear-gradient(to right, #ffffff, #05dfba);
+  }
+  
+  /* Form Styles */
+  
+  form {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff; /* white background */
+    border: 1px solid #ddd; /* light gray border */
+    box-shadow: 0 0 100px rgba(1, 5, 235, 0.1);
+    border-radius: 10px; /* rounded corners */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 0;
+    font-weight: bold;
+    color: #00ceb2; /* blue color for headings */
+  }
+  
+  section {
+    margin-bottom: 20px;
+    background-color: #f9f9f9; /* light gray background for sections */
+    padding: 10px;
+    border: 1px solid #ddd; /* light gray border for sections */
+    border-radius: 10px; /* rounded corners for sections */
+  }
+  
+  h3 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #666; /* dark gray color for subheadings */
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333; /* dark gray color for labels */
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* light gray border for input fields */
+    border-radius: 5px; /* rounded corners for input fields */
+    background-color: #fff; /* white background for input fields */
+  }
+  
+  input[type="file"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* light gray border for file input */
+    border-radius: 5px; /* rounded corners for file input */
+    background-color: #fff; /* white background for file input */
+  }
+  
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  button[type="submit"] {
+    margin-left: 350px;
+    background-color: #04cea2; /* green color for submit button */
+    color: #fff; /* white text color for submit button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* rounded corners for submit button */
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #068d65; /* darker green color for submit button on hover */
+  }
+  
+  /* Error Styles */
+  
+  .error {
+    color: #red; /* red color for error messages */
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Styles */
+  
+  @media (max-width: 768px) {
+    form {
+      padding: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea {
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button[type="submit"] {
+      padding: 5px 10px;
+    }
+  }
