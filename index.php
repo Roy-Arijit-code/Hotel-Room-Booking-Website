@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link  rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
   <?php require('inc/links.php'); ?>
-  <title><?php echo $settings_r['site_title'] ?> - HOME</title>
+  <title>Hoteland - HOME</title>
   <style>
     .availability-form{
       margin-top: -50px;
@@ -257,8 +257,7 @@
 
   <!-- Testimonials -->
 
-
-
+ 
   <!-- Reach us -->
 
   <h2 class="mt-5 pt-4 mb-4 text-center fw-bold h-font">REACH US</h2>

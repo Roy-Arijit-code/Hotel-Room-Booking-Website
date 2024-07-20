@@ -64,14 +64,14 @@
               </div>
             </a>
           </div>
-          <div class="col-md-3 mb-4">
+          <!-- <div class="col-md-3 mb-4">
             <a href="refund_bookings.php" class="text-decoration-none">
               <div class="card text-center text-warning p-3">
                 <h6>Refund Bookings</h6>
                 <h1 class="mt-2 mb-0"><?php echo $current_bookings['refund_bookings'] ?></h1>
               </div>
             </a>
-          </div>
+          </div> -->
           <div class="col-md-3 mb-4">
             <a href="user_queries.php" class="text-decoration-none">
               <div class="card text-center text-info p-3">

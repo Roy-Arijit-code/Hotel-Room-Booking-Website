@@ -35,7 +35,7 @@
   </div>
 </div>
 
-
+<h6 class="text-center bg-dark text-white p-3 m-0">© ALL RIGHTS RESERVED BY HOTELAND</h6>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -106,7 +106,7 @@
     modal.hide();
 
     let xhr = new XMLHttpRequest();
-    xhr.open("POST","ajax/registation.php",true);
+    xhr.open("POST","ajax/login_register.php",true);
 
     xhr.onload = function(){
       if(this.responseText == 'pass_mismatch'){
@@ -132,7 +132,6 @@
       }
       else{
         alert('success',"Registration successful!");
-        console.log(this.responseText);
         register_form.reset();
       }
     }
@@ -159,11 +158,9 @@
     xhr.open("POST","ajax/login_register.php",true);
 
     xhr.onload = function(){
-      console.log(this.responseText);
       if(this.responseText == 'inv_email_mob'){
         alert('error',"Invalid Email or Mobile Number!");
       }
-      
       else if(this.responseText == 'not_verified'){
         alert('error',"Email is not verified!");
       }

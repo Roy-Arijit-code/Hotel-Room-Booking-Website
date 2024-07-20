@@ -66,7 +66,7 @@
         </div>
 
         <!-- Shutdown section -->
-        <div class="card border-0 shadow-sm mb-4">
+        <!-- <div class="card border-0 shadow-sm mb-4">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between mb-3">
               <h5 class="card-title m-0">Shutdown Website</h5>
@@ -80,7 +80,7 @@
               No customers will be allowed to book hotel room, when shutdown mode is turned on.
             </p>
           </div>
-        </div>
+        </div> -->
 
         <!-- Contact details section -->
         <div class="card border-0 shadow-sm mb-4">

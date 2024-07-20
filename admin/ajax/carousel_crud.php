@@ -19,7 +19,7 @@
       echo $img_r;
     }
     else{
-      $q = "INSERT INTO `carousel`(`../images`) VALUES (?)";
+      $q = "INSERT INTO `carousel`(`image`) VALUES (?)";
       $values = [$img_r];
       $res = insert($q,$values,'s');
       echo $res;

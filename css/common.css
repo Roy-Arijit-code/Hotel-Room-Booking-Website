@@ -6,9 +6,9 @@
 *{
   font-family: 'Poppins', sans-serif;
 }
- .h-font{
+.h-font{
   font-family: 'Merienda', cursive;
-} 
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -40,7 +40,4 @@ input[type=number] {
   top: 80px;
   right: 25px;
   z-index: 1111;
-}
-.btn btn-outline-dark shadow-none:hover{
-  color:white;
 }

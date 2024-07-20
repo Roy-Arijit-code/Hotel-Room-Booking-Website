@@ -1,5 +1,5 @@
 <div class="container-fluid bg-dark text-light p-3 d-flex align-items-center justify-content-between sticky-top">
-  <h3 class="mb-0 h-font">HB WEBSITE</h3>
+  <h3 class="mb-0 h-font">Hoteland</h3>
   <a href="logout.php" class="btn btn-light btn-sm">LOG OUT</a>
 </div>
 
@@ -25,9 +25,9 @@
                 <li class="nav-item">
                   <a class="nav-link text-white" href="new_bookings.php">New Bookings</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a class="nav-link text-white" href="refund_bookings.php">Refund Bookings</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                   <a class="nav-link text-white" href="booking_records.php">Booking Records</a>
                 </li>

@@ -112,28 +112,5 @@
       die("Query cannot be prepared - Delete");
     }
   }
-  function run_query($sql){
-    global $hname;
-    global $uname;
-    global $pass;
-    global $db;
-    $con = mysqli_connect($hname,$uname,$pass,$db);
-    if (!$con) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
-    
-    $result= mysqli_query($con,$sql);
-    return $result;
-  }
-function check_real_escape_string($res){
-  global $hname;
-    global $uname;
-    global $pass;
-    global $db;
-    $con = mysqli_connect($hname,$uname,$pass,$db);
-    if (!$con) {
-      die("Connection failed: " . mysqli_connect_error());
-    }
-    return mysqli_real_escape_string($con, $res);
-}
+
 ?>

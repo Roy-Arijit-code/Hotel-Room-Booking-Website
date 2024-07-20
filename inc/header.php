@@ -1,6 +1,6 @@
 <nav id="nav-bar" class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php"><?php echo $settings_r['site_title'] ?></a>
+    <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="index.php">Hoteland</a>
     <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,10 +23,11 @@
         </li>
       </ul>
       <div class="d-flex">
-        <?php
-        if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
-          $path = USERS_IMG_PATH;
-          echo <<<data
+        <?php 
+          if(isset($_SESSION['login']) && $_SESSION['login']==true)
+          {
+            $path = USERS_IMG_PATH;
+            echo<<<data
               <div class="btn-group">
                 <button type="button" class="btn btn-outline-dark shadow-none dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                   <img src="$path$_SESSION[uPic]" style="width: 25px; height: 25px;" class="me-1 rounded-circle">
@@ -39,17 +40,18 @@
                 </ul>
               </div>
             data;
-        } else {
-          echo <<<data
+          }
+          else
+          {
+            echo<<<data
               <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
                 Login
               </button>
               <button type="button" class="btn btn-outline-dark shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
                 Register
-            
               </button>
             data;
-        }
+          }
         ?>
       </div>
     </div>
@@ -86,8 +88,6 @@
     </div>
   </div>
 </div>
-
-
 
 <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">

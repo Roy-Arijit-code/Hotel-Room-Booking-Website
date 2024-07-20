@@ -105,20 +105,13 @@
 
     // -- START
 
-    // $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`, `pincode`, `dob`,`profile`, `password`, `is_verified`) VALUES (?,?,?,?,?,?,?,?,?)";
-    // $values = [$data['name'],$data['email'],$data['address'],$data['phonenum'],$data['pincode'],$data['dob'],$img,$enc_pass,'0'];
-    $cust_name=$data['name'];
-    $cust_email=$data['email'];
-    $cust_address=$data['address'];
-    $cust_phonenum=$data['phonenum'];
-    $cust_pincode=$data['pincode'];
-    $cust_dob=$data['dob'];
-    $query2="INSERT INTO `user_cred`(`id`, `name`, `email`, `address`, `phonenum`, `pincode`, `dob`,`profile`, `password`, `is_verified`) VALUES (NULL,'$cust_name','$cust_email','$cust_address','$cust_phonenum','$cust_pincode','$data['dob']',$img,$enc_pass,'0')";
+    $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`, `pincode`, `dob`,`profile`, `password`, `is_verified`) VALUES (?,?,?,?,?,?,?,?,?)";
+    $values = [$data['name'],$data['email'],$data['address'],$data['phonenum'],$data['pincode'],$data['dob'],$img,$enc_pass,'1'];
 
     // -- END
 
-    if(run_query($query2)){
-      echo $query2;
+    if(insert($query,$values,'sssssssss')){
+      echo 1;
     }
     else{
       echo 'ins_failed';
@@ -127,38 +120,39 @@
   }
 
   if(isset($_POST['login']))
-{
+  {
     $data = filteration($_POST);
 
     $u_exist = select("SELECT * FROM `user_cred` WHERE `email`=? OR `phonenum`=? LIMIT 1",
     [$data['email_mob'],$data['email_mob']],"ss");
 
     if(mysqli_num_rows($u_exist)==0){
-        echo 'inv_email_mob';
+      echo 'inv_email_mob';
     }
     else{
-        $u_fetch = mysqli_fetch_assoc($u_exist);
-        // if($u_fetch['is_verified']==0){
-        //   echo 'not_verified';
-        // }
-        if($u_fetch['status']==0){
-            echo 'inactive';
+      $u_fetch = mysqli_fetch_assoc($u_exist);
+      if($u_fetch['is_verified']==0){
+        echo 'not_verified';
+      }
+      else if($u_fetch['status']==0){
+        echo 'inactive';
+      }
+      else{
+        if(!password_verify($data['pass'],$u_fetch['password'])){
+          echo 'invalid_pass';
         }
         else{
-            if(password_verify($data['pass'],$u_fetch['password'])){
-                session_start();
-                $_SESSION['login'] = true;
-                $_SESSION['uId'] = $u_fetch['id'];
-                $_SESSION['uName'] = $u_fetch['name'];
-                // $_SESSION['uPic'] = $u_fetch['profile'];
-                $_SESSION['uPhone'] = $u_fetch['phonenum'];
-                echo 1;
-            } else {
-                echo 'invalid_pass';
-            }
+          session_start();
+          $_SESSION['login'] = true;
+          $_SESSION['uId'] = $u_fetch['id'];
+          $_SESSION['uName'] = $u_fetch['name'];
+          $_SESSION['uPic'] = $u_fetch['profile'];
+          $_SESSION['uPhone'] = $u_fetch['phonenum'];
+          echo 1;
         }
+      }
     }
-}
+  }
 
   if(isset($_POST['forgot_pass']))
   {
