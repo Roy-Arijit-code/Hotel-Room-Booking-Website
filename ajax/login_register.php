@@ -86,24 +86,6 @@
     $enc_pass = password_hash($data['pass'],PASSWORD_BCRYPT);
 
 
-    // -->>> UN-COMMENT the below lines if you want to use email verification
-
-    // -- START
-    /* 
-      $token = bin2hex(random_bytes(16));
-      if(!send_mail($data['email'],$token,"email_confirmation")){
-        echo 'mail_failed';
-        exit;
-      }  
-      $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`, `pincode`, `dob`,`profile`, `password`, `token`) VALUES (?,?,?,?,?,?,?,?,?)";
-      $values = [$data['name'],$data['email'],$data['address'],$data['phonenum'],$data['pincode'],$data['dob'],$img,$enc_pass,$token];
-    */
-    // -- END
-
-
-    // --->>> COMMENT these lines if you are using email verification
-
-    // -- START
 
     $query = "INSERT INTO `user_cred`(`name`, `email`, `address`, `phonenum`, `pincode`, `dob`,`profile`, `password`, `is_verified`) VALUES (?,?,?,?,?,?,?,?,?)";
     $values = [$data['name'],$data['email'],$data['address'],$data['phonenum'],$data['pincode'],$data['dob'],$img,$enc_pass,'1'];
